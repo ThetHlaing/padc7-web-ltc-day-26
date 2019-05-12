@@ -18,41 +18,21 @@
             </li>
         </ul>
         <br/>
-        <h1>Add new fruits</h1>
-        <form method="POST" action="/fruits">            
+        <h1>Update <%= data.name%></h1>
+        <form method="POST" action="/fruits/<%= data.id%>/update">            
             <div class="form-group">
                 <label for="name">Fruit Name</label>
-                    <input id="name"class="form-control" name="fruit"/><br/>
+                    <input id="name"class="form-control" value="<%= data.name%>" name="fruit"/><br/>
             </div>
             <div class="form-group">
                 <label for="stock">Stock</label>
-                    <input id="stock" class="form-control" type="tel" name="stock"/><br/>
+                    <input id="stock" class="form-control" value="<%= data.stock %>" type="tel" name="stock"/><br/>
             </div>
             <div class="form-group">
                 <button class="btn btn-primary">Save</button>
             </div>        
         </form>    
-        <h1>Fruits</h1>        
-        <table class="table">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Fruit Name</th>
-                    <th>Stock</th>
-                    <th></th>
-                    <th></th>
-                </tr>
-            </thead>
-            <tbody>
-                <% data.forEach( element => { %>
-                    <tr>
-                        <td><%= element.name %></td>
-                        <td><%= element.stock %></td>
-                        <td>Edit</td>
-                        <td>Delete</td>
-                    </tr>
-                <% }) %>
-            </tbody>
-        </table>
+        
     </div>    
     
     </body>
